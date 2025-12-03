@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: seagreen;
+    padding: 0.5px; 
+    font-size: 12px;
+    font-family :monospace
+}
+h1 {
+    background-color: black;
+    color: seagreen;
+    font-size: 12px;
+    font-family: monospace;
+}
