@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fredericksburg Community Resource Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="eyebrow">Area Code 17026 • Fredericksburg, PA</p>
+      <h1>Fredericksburg Community Resource Hub</h1>
+      <p class="lede">A one-stop space to discover local non-profits, support services, and events that keep our neighbors connected.</p>
+      <div class="hero__cta">
+        <a href="#directory" class="button">Browse the Resource Hub</a>
+        <a href="#submit" class="button button--ghost">Suggest a New Resource</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container grid highlights" aria-labelledby="highlight-title">
+      <div class="section-heading">
+        <p class="eyebrow">Spotlight</p>
+        <h2 id="highlight-title">Featured Resources</h2>
+        <p>Three standout services making a difference in Fredericksburg and the surrounding 17026 community.</p>
+      </div>
+      <div class="highlight-cards" id="highlight-cards">
+        <!-- Cards populated by JavaScript -->
+      </div>
+    </section>
+
+    <section id="directory" class="directory" aria-labelledby="directory-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Resource Hub</p>
+          <h2 id="directory-title">Interactive Directory</h2>
+          <p>Search and filter community resources by category or service focus.</p>
+        </div>
+
+        <div class="filters" aria-label="Resource filters">
+          <label class="field">
+            <span>Search by name or description</span>
+            <input type="search" id="search" placeholder="Search resources..." />
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select id="category">
+              <option value="all">All categories</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Focus</span>
+            <select id="focus">
+              <option value="all">Any focus</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="resource-grid" id="resource-list" aria-live="polite"></div>
+        <p class="results-hint" id="results-count"></p>
+      </div>
+    </section>
+
+    <section class="form-section" id="submit" aria-labelledby="submit-title">
+      <div class="container grid">
+        <div class="section-heading">
+          <p class="eyebrow">Contribute</p>
+          <h2 id="submit-title">Suggest a Resource</h2>
+          <p>Know a program, non-profit, or support service we missed? Share it so neighbors can find help faster.</p>
+          <ul class="bullet-list">
+            <li>We review submissions weekly.</li>
+            <li>Include contact info so we can verify details.</li>
+            <li>All resources should serve the Fredericksburg (17026) area.</li>
+          </ul>
+        </div>
+
+        <form id="resource-form" class="card" novalidate>
+          <div class="field">
+            <label for="name">Resource name</label>
+            <input id="name" name="name" type="text" required placeholder="e.g., Fredericksburg Food Cooperative" />
+          </div>
+          <div class="field">
+            <label for="email">Contact email</label>
+            <input id="email" name="email" type="email" required placeholder="contact@example.org" />
+          </div>
+          <div class="field">
+            <label for="category-field">Category</label>
+            <select id="category-field" name="category" required>
+              <option value="">Select a category</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="description">Short description</label>
+            <textarea id="description" name="description" rows="3" required placeholder="What does this resource provide?"></textarea>
+          </div>
+          <div class="field">
+            <label for="focus-field">Service focus</label>
+            <input id="focus-field" name="focus" type="text" placeholder="Youth, housing, food access..." />
+          </div>
+          <button type="submit" class="button button--full">Submit resource</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="extras" aria-labelledby="extra-title">
+      <div class="container grid">
+        <div>
+          <p class="eyebrow">Events</p>
+          <h2 id="extra-title">Upcoming Community Moments</h2>
+          <ul class="card list">
+            <li><strong>Neighborhood Night Market</strong> – Last Friday each month on Main St. Vendors, youth activities, and live music.</li>
+            <li><strong>Volunteer Saturday</strong> – First Saturday at Fredericksburg Community Center. Sign-ups for food pantry, park cleanups, and tutoring.</li>
+            <li><strong>Health & Wellness Fair</strong> – Spring event with free screenings and local providers (17026 & surrounding ZIPs).</li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow">Why This Hub?</p>
+          <div class="card">
+            <p>This site was built by and for Fredericksburg residents to make it easier to find help, give help, and stay connected. It is a first draft&mdash;tell us what to add next!</p>
+            <div class="pill-group">
+              <span class="pill">Locally curated</span>
+              <span class="pill">Mobile-ready</span>
+              <span class="pill">Black-led design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div>
+        <h3>Fredericksburg Resource Hub</h3>
+        <p>Connecting neighbors in area code 17026 with the services that keep us thriving.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#directory">Resource Hub</a>
+        <a href="#submit">Submit</a>
+        <a href="#extra-title">Events</a>
+      </div>
+    </div>
+    <p class="footer__note">Built for the TSA 2025-2026 Webmaster challenge.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
